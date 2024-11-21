@@ -12,7 +12,7 @@ VALUES
 ('Golden Brewery', 'A brewery known for its golden ales.', 'USA'),
 ('Frosty Beer Co.', 'Specializing in ice-cold lagers.', 'Canada'),
 ('Crafty Brews', 'Innovative craft beers.', 'UK'),
-('Bavarian Classics', 'Traditional Bavarian beer.', 'Germany');
+('Bavarian Classics', 'Traditional Bavarian beer.', 'Germany'),
 ('Highland Hops', 'Fresh hoppy brews from the Scottish Highlands.', 'Scotland'),
 ('Sunset Brews', 'Beers inspired by warm sunsets.', 'Australia');
 
@@ -23,7 +23,7 @@ VALUES
 ('Lager'),
 ('Stout'),
 ('IPA'),
-('Pilsner');
+('Pilsner'),
 ('Sour'),
 ('Porter'),
 ('Wheat Beer');
@@ -34,7 +34,7 @@ VALUES
 ('Golden Ale', 'A smooth, malty ale with hints of caramel.', 5.2, 1, 1),
 ('Frosty Lager', 'Crisp and refreshing lager perfect for summer.', 4.5, 2, 1),
 ('Dark Stout', 'Rich and creamy stout with chocolate notes.', 6.0, 3, 3),
-('Hoppy IPA', 'A bold IPA with strong citrus flavors.', 7.0, 4, 4);
+('Hoppy IPA', 'A bold IPA with strong citrus flavors.', 7.0, 4, 4),
 ('Tropical IPA', 'A fruity IPA with mango and passion fruit notes.', 6.5, 5, 4),
 ('Cherry Sour', 'A tart beer with a burst of cherry flavor.', 4.2, 3, 6),
 ('Classic Porter', 'Smooth, chocolatey porter with a hint of coffee.', 6.0, 5, 7),
@@ -80,18 +80,18 @@ VALUES
 -- Insert beer_ingredients
 INSERT INTO beer_ingredient (id_beer, id_ingredient)
 VALUES
-(1, 1), -- Golden Ale uses Barley
-(1, 2), -- Golden Ale uses Hops
-(1, 3), -- Golden Ale uses Yeast
-(1, 4), -- Golden Ale uses Water
-(2, 1), -- Frosty Lager uses Barley
-(2, 2), -- Frosty Lager uses Hops
-(2, 4), -- Frosty Lager uses Water
-(3, 1), -- Dark Stout uses Barley
-(3, 2), -- Dark Stout uses Hops
-(3, 3), -- Dark Stout uses Yeast
-(3, 4), -- Dark Stout uses Water
-(4, 1), -- Hoppy IPA uses Barley
-(4, 2), -- Hoppy IPA uses Hops
-(4, 4), -- Hoppy IPA uses Water
-(4, 5); -- Hoppy IPA uses Honey
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(2, 1),
+(2, 2),
+(2, 4),
+(3, 1),
+(3, 2),
+(3, 3),
+(3, 4),
+(4, 1),
+(4, 2),
+(4, 4),
+(4, 5);
