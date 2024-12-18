@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 const app: Application = express();
 
-import { setupSwagger } from "../swagger";
+import { setupSwagger } from "./swagger";
 
 // Import des routes
 import { router as beersRoutes } from "./routes/beers";

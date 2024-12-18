@@ -60,10 +60,6 @@ router.get("/:id", beersController.getOne);
  *                 type: number
  *               organic:
  *                 type: boolean
- *               id_category:
- *                 type: number
- *               id_brewery:
- *                 type: number
  *             required:
  *               - name
  *               - description
@@ -106,10 +102,6 @@ router.post("/", beersController.post);
  *                 type: number
  *               organic:
  *                 type: boolean
- *               id_category:
- *                 type: number
- *               id_brewery:
- *                 type: number
  *     responses:
  *       200:
  *         description: Bière mise à jour avec succès.
