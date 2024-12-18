@@ -1,0 +1,33 @@
+services:
+    db:
+        image: postgres:15 # Utilisation de l'image officielle de PostgreSQL
+        container_name: postgres_db # Nom du conteneur pour PostgreSQL
+        ports:
+            - "2345:5432" # Exposition du port 5432 pour la connexion à la base de données
+        environment:
+            POSTGRES_USER: postgres # Nom d'utilisateur de PostgreSQL
+            POSTGRES_PASSWORD: postgres # Mot de passe de PostgreSQL
+            POSTGRES_DB: express_demo # Nom de la base de données par défaut
+        volumes:
+            - db_data:/var/lib/postgresql/data # Volume persistant pour les données PostgreSQL
+    api:
+        build:
+            context: .
+            dockerfile: DockerFile
+        container_name: api_container
+        ports:
+            - 3001:3001
+        volumes:
+            - .:/app
+            - /app/node_modules
+        environment:
+            - DB_HOST=postgres
+            - DB_PORT=5432
+            - DB_USER=postgres
+            - DB_PASSWORD=postgres
+            - DB_NAME=postgres
+        depends_on:
+        - db
+
+volumes:
+    db_data: # Volume persistant pour les données de la base de données PostgreSQL
