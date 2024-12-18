@@ -37,4 +37,8 @@ INSERT INTO beer (name, description, abv, organic) VALUES
 ('Dark Horizon', 'A bold stout with coffee and chocolate notes.', 7.0, true),
 ('Golden Wave', 'A smooth and creamy lager.', 5.0, false),
 ('Mango Dream', 'An exotic fruit beer with a tangy finish.', 4.7, true),
+<<<<<<< HEAD
 ('Summer Pils', 'A crisp pilsner with herbal notes.', 4.3, false);
+=======
+('Summer Pils', 'A crisp pilsner with herbal notes.', 4.3, false)
+>>>>>>> 68abff28c8e025d51c057648114cfcf88c1eee81
