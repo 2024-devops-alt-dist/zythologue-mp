@@ -35,19 +35,19 @@ export const beersController = {
         }
     },
     post: async (req: Request, res: Response): Promise<void> => {
-        const { name, description, abv, organic, id_category, id_brewery }: Beer = req.body;
+        const { name, description, abv, organic }: Beer = req.body;
 
-        if (!name || !description || !abv || !organic || !id_category || !id_brewery) {
+        if (!name || !description || !abv || !organic) {
             res.status(400).json({ error: "All fields are required" });
             return;
         }
 
         try {
             const result = await pool.query(
-                `INSERT INTO beer (name, description, abv, organic, id_category, id_brewery)
+                `INSERT INTO beer (name, description, abv, organic)
                 VALUES ($1, $2, $3, $4, $5, $6)
                 RETURNING *`,
-                [name, description, abv, organic, id_category, id_brewery]
+                [name, description, abv, organic]
             );
 
             res.status(201).json({ beer: result.rows[0] });
@@ -58,7 +58,7 @@ export const beersController = {
     },
     put: async (req: Request, res: Response): Promise<void> => {
         const { id } = req.params;
-        const { name, description, abv, organic, id_category, id_brewery }: Partial<Beer> = req.body;
+        const { name, description, abv, organic}: Partial<Beer> = req.body;
 
         try {
             const beerExists = await pool.query("SELECT * FROM beer WHERE id = $1", [id]);
@@ -73,12 +73,10 @@ export const beersController = {
                     name = COALESCE($1, name), 
                     description = COALESCE($2, description), 
                     abv = COALESCE($3, abv), 
-                    organic = COALESCE($4, organic), 
-                    id_category = COALESCE($5, id_category),
-                    id_brewery = COALESCE($6, id_brewery)
+                    organic = COALESCE($4, organic)
                 WHERE id = $7
                 RETURNING *`,
-                [name, description, abv, organic, id_category, id_brewery, id]
+                [name, description, abv, organic, id]
             );
 
             res.status(200).json({ beer: result.rows[0] });
