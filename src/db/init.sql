@@ -14,7 +14,8 @@ CREATE TABLE IF NOT EXISTS beer (
     name varchar(50) not null,
     description text not null,
     abv float not null,
-    organic bool not null
+    organic bool not null,
+    image_url varchar (100) not null
 );
 
 

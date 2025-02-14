@@ -60,11 +60,14 @@ router.get("/:id", beersController.getOne);
  *                 type: number
  *               organic:
  *                 type: boolean
+ *               image_url:
+ *                 type: string
  *             required:
  *               - name
  *               - description
  *               - abv
  *               - organic
+ *               - image_url
  *     responses:
  *       201:
  *         description: Bière ajoutée avec succès.
@@ -102,6 +105,8 @@ router.post("/", beersController.post);
  *                 type: number
  *               organic:
  *                 type: boolean
+ *               image_url:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Bière mise à jour avec succès.

@@ -4,4 +4,5 @@ export interface Beer {
     description: string;
     abv: number;
     organic: boolean;
+    image_url: string;
 }
